@@ -1,0 +1,31 @@
+{
+   "name": "upload-files-practice",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "dependencies": {
+      "cloudinary": "^1.13.2",
+      "cors": "^2.8.5",
+      "express": "^4.16.4",
+      "helmet": "^3.15.0",
+      "morgan": "^1.9.1",
+      "multer": "^1.4.1"
+   },
+   "devDependencies": {
+      "nodemon": "^1.18.9"
+   },
+   "scripts": {
+      "server": "nodemon index.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tommaay/upload-files-practice.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/tommaay/upload-files-practice/issues"
+   },
+   "homepage": "https://github.com/tommaay/upload-files-practice#readme"
+}
