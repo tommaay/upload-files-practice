@@ -20,7 +20,6 @@ server.get('/', (req, res) => {
 });
 
 server.post('/upload', multerUploads, (req, res) => {
-   console.log('req.file:', req.file);
    if (req.file) {
       const file = dataUri(req).content;
       return uploader.upload(file).then(result => {
@@ -30,16 +29,13 @@ server.post('/upload', multerUploads, (req, res) => {
             .json({
                message:
                   'Your image has been uploaded successfully to cloudinary',
-               data: { image },
+               image: image,
             })
             .catch(err =>
-               res
-                  .status(400)
-                  .json({
-                     message:
-                        'Something went wrong while processing your request',
-                     data: { err },
-                  })
+               res.status(400).json({
+                  message: 'Something went wrong while processing your request',
+                  err: err,
+               })
             );
       });
    }
