@@ -29,11 +29,13 @@ class App extends Component {
       const fd = new FormData();
       fd.append('image', this.state.selectedFile);
 
-      axios.post('http://localhost:5000/upload', fd).then(res => {
-         console.log('res', res);
-         this.setState({ image: res.data.image });
-      });
-      // .catch(err => console.log(err));
+      axios
+         .post('https://upload-files-test.herokuapp.com/upload', fd)
+         .then(res => {
+            console.log('res', res);
+            this.setState({ image: res.data.image });
+         })
+         .catch(err => console.log(err));
    };
 
    render() {
