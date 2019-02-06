@@ -30,7 +30,7 @@ class App extends Component {
       fd.append('image', this.state.selectedFile);
 
       axios
-         .post('https://use-my-tech-stuff.herokuapp.com/upload', fd)
+         .post('https://use-my-tech-stuff.herokuapp.com/api/items/upload', fd)
          .then(res => {
             console.log('res', res);
             this.setState({ image: res.data.image });
